@@ -3,19 +3,19 @@
   <groupId>org.lucee</groupId>
   <artifactId>exasol</artifactId>
   <version>7.1.1.0001L</version>
-  <name>javamail</name>
+  <name>exasol</name>
   <packaging>bundle</packaging>
 
-  <description>OSGi Version of javamail</description>
+  <description>OSGi Version of exasol</description>
   <url>http://maven.lucee.org/exasol/</url>
 
   <!-- same license as the original jar -->
   <licenses>
 
 	<license>
-		<name>EXAClient License</name>
-		<url>https://www.exasol.com/LICENSE-exasol-jdbc.txt</url>
-		<comments></comments>
+	<name>EXAClient License</name>
+	<url>https://www.exasol.com/LICENSE-exasol-jdbc.txt</url>
+	<comments></comments>
 	</license>
 
   </licenses>
@@ -110,7 +110,7 @@
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>5.1.2</version>
         <configuration>
           <unpackBundle>true</unpackBundle>
           <instructions>
@@ -138,7 +138,7 @@
     <url>https://github.com/lucee/osgi-bundle-exasol</url>
     <connection>scm:git:git://github.com/lucee/osgi-bundle-exasol.git</connection>
     <developerConnection>scm:git:git@github.com:lucee/osgi-bundle-exasol.git</developerConnection>
-    <tag>javamail OSGi library</tag>
+    <tag>exasol OSGi library</tag>
   </scm>
 
   <distributionManagement>
