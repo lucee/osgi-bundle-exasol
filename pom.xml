@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lucee</groupId>
   <artifactId>exasol</artifactId>
-  <version>7.1.1.0001L</version>
+  <version>7.1.2</version>
   <name>exasol</name>
   <packaging>bundle</packaging>
 
@@ -94,7 +94,7 @@
                  <artifactItem>
                    <groupId>com.exasol</groupId>
                     <artifactId>exasol-jdbc</artifactId>
-                    <version>7.1.1</version>
+                    <version>7.1.2</version>
                    <type>jar</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -120,8 +120,8 @@
             <Export-Package>*,META-INF.services.*</Export-Package>
             <!-- <Require-Bundle></Require-Bundle> -->
             <!-- <Require-Bundle-Fragment></Require-Bundle-Fragment> -->
-            <!-- <Import-Package>*</Import-Package> -->
-            <!-- <DynamicImport-Package>*</DynamicImport-Package> -->
+            <Import-Package>!com.sun.jna.platform.win32,!sun.reflect.generics.reflectiveObjects,!sun.security.tools.keytool,!waffle.windows.auth,!waffle.windows.auth.impl,!com.github.benmanes.caffeine.cache,*</Import-Package>
+            <DynamicImport-Package>com.sun.jna.platform.win32,sun.reflect.generics.reflectiveObjects,sun.security.tools.keytool,waffle.windows.auth,waffle.windows.auth.impl,com.github.benmanes.caffeine.cache</DynamicImport-Package>
             <!-- <Fragment-Host></Fragment-Host> -->
           </instructions>
         </configuration>
