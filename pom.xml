@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lucee</groupId>
   <artifactId>exasol</artifactId>
-  <version>7.1.2</version>
+  <version>7.1.11</version>
   <name>exasol</name>
   <packaging>bundle</packaging>
 
@@ -11,18 +11,15 @@
 
   <!-- same license as the original jar -->
   <licenses>
-
-	<license>
+<license>
 	<name>EXAClient License</name>
 	<url>https://www.exasol.com/LICENSE-exasol-jdbc.txt</url>
 	<comments></comments>
 	</license>
-
   </licenses>
 
   <developers>
-
-    <developer>
+<developer>
       <id>micstriit</id>
       <name>Michael Offner</name>
       <email>michael@lucee.org</email>
@@ -34,7 +31,6 @@
       </roles>
       <timezone>+1</timezone>
     </developer>
-
   </developers>
 
   <build>
@@ -94,7 +90,7 @@
                  <artifactItem>
                    <groupId>com.exasol</groupId>
                     <artifactId>exasol-jdbc</artifactId>
-                    <version>7.1.2</version>
+                    <version>7.1.11</version>
                    <type>jar</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -123,6 +119,8 @@
             <Import-Package>!com.sun.jna.platform.win32,!sun.reflect.generics.reflectiveObjects,!sun.security.tools.keytool,!waffle.windows.auth,!waffle.windows.auth.impl,!com.github.benmanes.caffeine.cache,*</Import-Package>
             <DynamicImport-Package>com.sun.jna.platform.win32,sun.reflect.generics.reflectiveObjects,sun.security.tools.keytool,waffle.windows.auth,waffle.windows.auth.impl,com.github.benmanes.caffeine.cache</DynamicImport-Package>
             <!-- <Fragment-Host></Fragment-Host> -->
+            <!-- Custom -->
+            <!-- Embed Dependency -->
           </instructions>
         </configuration>
         <extensions>true</extensions>
@@ -131,7 +129,6 @@
 
     </plugins>
   </build>
-  
 
 
   <scm>
