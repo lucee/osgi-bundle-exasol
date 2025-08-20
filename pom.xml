@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lucee</groupId>
   <artifactId>exasol</artifactId>
-  <version>7.1.16</version>
+  <version>7.1.20</version>
   <name>exasol</name>
   <packaging>bundle</packaging>
 
@@ -36,16 +36,15 @@
   <build>
     <plugins>
       <plugin>
-      <groupId>org.sonatype.plugins</groupId>
-      <artifactId>nexus-staging-maven-plugin</artifactId>
-      <version>1.6.3</version>
-      <extensions>true</extensions>
-      <configuration>
-        <serverId>ossrh</serverId>
-        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-      </configuration>
-    </plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.8.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>ossrh</publishingServerId>
+          <autoPublish>true</autoPublish>
+        </configuration>
+      </plugin>
 
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
@@ -90,7 +89,7 @@
                  <artifactItem>
                    <groupId>com.exasol</groupId>
                     <artifactId>exasol-jdbc</artifactId>
-                    <version>7.1.16</version>
+                    <version>7.1.20</version>
                     <!-- <classifier></classifier> -->
                    <type>jar</type>
                    <overWrite>false</overWrite>
@@ -146,16 +145,4 @@
     <developerConnection>scm:git:git@github.com:lucee/osgi-bundle-exasol.git</developerConnection>
     <tag>exasol OSGi library</tag>
   </scm>
-
-  <distributionManagement>
-    <repository>
-    <id>ossrh</id>
-    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-  </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-
 </project>
