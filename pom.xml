@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lucee</groupId>
   <artifactId>exasol</artifactId>
-  <version>7.1.3</version>
+  <version>7.1.16</version>
   <name>exasol</name>
   <packaging>bundle</packaging>
 
@@ -90,10 +90,12 @@
                  <artifactItem>
                    <groupId>com.exasol</groupId>
                     <artifactId>exasol-jdbc</artifactId>
-                    <version>7.1.3</version>
+                    <version>7.1.16</version>
+                    <!-- <classifier></classifier> -->
                    <type>jar</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                   <includes>**/*.*</includes> 
                  </artifactItem>
                </artifactItems>
                <overWriteReleases>true</overWriteReleases>
@@ -116,11 +118,18 @@
             <Export-Package>*,META-INF.services.*</Export-Package>
             <!-- <Require-Bundle></Require-Bundle> -->
             <!-- <Require-Bundle-Fragment></Require-Bundle-Fragment> -->
-            <Import-Package>!com.sun.jna.platform.win32,!sun.reflect.generics.reflectiveObjects,!sun.security.tools.keytool,!waffle.windows.auth,!waffle.windows.auth.impl,!com.github.benmanes.caffeine.cache,*</Import-Package>
-            <DynamicImport-Package>com.sun.jna.platform.win32,sun.reflect.generics.reflectiveObjects,sun.security.tools.keytool,waffle.windows.auth,waffle.windows.auth.impl,com.github.benmanes.caffeine.cache</DynamicImport-Package>
+            <Import-Package>!com.sun.jna.platform.win32,!sun.reflect.generics.reflectiveObjects,!sun.security.tools.keytool,!waffle.windows.auth,!waffle.windows.auth.impl,!com.github.benmanes.caffeine.cache,!javax.security.auth.spi,*</Import-Package>
+            <DynamicImport-Package>com.sun.jna.platform.win32,sun.reflect.generics.reflectiveObjects,sun.security.tools.keytool,waffle.windows.auth,waffle.windows.auth.impl,com.github.benmanes.caffeine.cache,javax.security.auth.spi</DynamicImport-Package>
             <!-- <Fragment-Host></Fragment-Host> -->
-            <!-- Custom -->
+            <Main-Class>com.exasol.jdbc.EXADriver</Main-Class>
+						<Class-Path></Class-Path>
+						<Manifest-Version>1.0</Manifest-Version>
+						<Implementation-Vendor>Exasol AG</Implementation-Vendor>
+						<Implementation-Version>1.0</Implementation-Version>
+						<Created-By>1.6.0_22 &#x28;Sun Microsystems Inc.&#x29;</Created-By>
             <!-- Embed Dependency -->
+            <!-- <_noee></_noee> -->
+            <!-- <Include-Resource>@${project.build.outputDirectory}</Include-Resource> -->
           </instructions>
         </configuration>
         <extensions>true</extensions>
